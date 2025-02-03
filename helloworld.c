@@ -4,6 +4,6 @@ int main() {
    printf("Hello, World!");
    
    
-   char awsum_string[32];
-   printf("%s hi");
+   char awsum_string[b];
+   printf("%s");
 }
