@@ -3,7 +3,8 @@ int main() {
    // printf() displays the string inside quotation
    printf("Hello, World!");
    
-   
-   char awsum_string[b];
+   char awsum[5];
    printf("%s");
+
+   
 }
