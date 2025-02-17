@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to C Programming</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        pre {
+            background-color: #272727;
+            color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            color: #777;
+        }
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Introduction to C Programming</h1>
+        <p>Learn the basics of the C programming language.</p>
+    </header>
+
+    <section>
+        <h2>What is C?</h2>
+        <p>C is a powerful general-purpose programming language created in 1972 by Dennis Ritchie. It is widely used for system and application software development.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+            <li>Efficient and simple</li>
+            <li>Procedural language</li>
+            <li>Low-level memory access with pointers</li>
+            <li>Highly portable</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Basic Structure of a C Program</h2>
+        <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <h2>Why Learn C?</h2>
+        <p>C is the foundation for many other languages, enables system-level programming, and allows for efficient performance in various applications.</p>
+    </section>
+
+    <footer>
+        <p>Learn more at <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">Wikipedia: C Programming Language</a></p>
+    </footer>
+
+</body>
+</html>
+
