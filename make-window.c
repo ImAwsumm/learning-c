@@ -10,5 +10,7 @@ int main(int argc, char *argv[]) {
     gtk_main();
 
 // not working ;(
+
+// why is gtk so hard :(
     return 0;
 }
