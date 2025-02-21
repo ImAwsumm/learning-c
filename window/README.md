@@ -8,6 +8,7 @@
   **Window Creation:**.
     - the window is created and is set to a default size of 1920*1080 pixels
     - The window is titled "My First Window" and is set to a default size of 1920 * 1080 pixels 
+    
         *1920x1080 is a very popular screen resolution usually reffered as 1080p*
 
     
