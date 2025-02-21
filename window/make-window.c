@@ -28,8 +28,8 @@ int main(int argc, char *argv[]) {
 
     // make a button can set the label to "Awsum Button"
     GtkWidget *button = gtk_button_new_with_label("Awsum Button");
-    
-    // connect the button click event to the function at line 8
+
+    //send a signal in the terminal when the button is clicked
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), NULL);
 
     // add the button to the window
