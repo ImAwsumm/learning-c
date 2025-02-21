@@ -1,5 +1,6 @@
 ### In order to compile the C code you will have to run this command 
 `` gcc `pkg-config --cflags gtk+-3.0` -o window gtk-window.c `pkg-config --libs gtk+-3.0`  `` 
+
 This C program demonstrates how to create a basic GUI (graphical user interface) using the GTK library.
 
 
