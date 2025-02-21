@@ -1,7 +1,7 @@
-## In order to compile the C code you will have to run this command 
+### In order to compile the C code you will have to run this command 
 `` gcc `pkg-config --cflags gtk+-3.0` -o window gtk-window.c `pkg-config --libs gtk+-3.0`  `` 
 
-
+-
 
 ### **Key Features:**
   
