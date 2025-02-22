@@ -68,7 +68,7 @@ pre code {
 
 /* Styling for the overall container */
 .container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -76,7 +76,8 @@ pre code {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Links (if any) */
+/* Links (I will add some later..) */
+
 a {
     color: #007bff;
     text-decoration: none;
