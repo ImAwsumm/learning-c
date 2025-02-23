@@ -18,8 +18,11 @@ A simple GTK application in C that creates a window with two buttons: one to dis
    ```bash
    sudo apt-get install libgtk-3-dev
    ```
-
-2. **Compile the Code**:
+2. **Download the repo**
+   ```bash
+    git clone https://github.com/ImAwsumm/learning-c.git
+   ```
+3. **Compile the Code**:
    ```bash
    gcc -o gtk_text_window gtk_text_window.c $(pkg-config --cflags --libs gtk+-3.0)
    ```
