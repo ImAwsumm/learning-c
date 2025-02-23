@@ -46,8 +46,65 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    ```
 
 ---
+Certainly! Here are the instructions for installing **GCC** and **GTK** on **Arch Linux**.
 
-### 2. **For MacOs:**
+### 1. **Install GCC on Arch Linux:**
+
+1. **Update your package database**:
+   ```bash
+   sudo pacman -Syu
+   ```
+
+2. **Install GCC**:
+   ```bash
+   sudo pacman -S base-devel
+   ```
+   The `base-devel` package group includes GCC and other essential tools for development.
+
+3. **Verify GCC installation**:
+   ```bash
+   gcc --version
+   ```
+### 2. **Install GTK**
+
+1. **Install GTK 3 (most commonly used)**:
+   ```bash
+   sudo pacman -S gtk3
+   ```
+
+   For **GTK 4**, if you prefer the newer version, run:
+   (not needed for my projects)
+   ```bash
+   sudo pacman -S gtk4
+   ```
+
+3. **Verify GTK installation**:
+   For GTK 3, you can check the installation with:
+   ```bash
+   pkg-config --cflags --libs gtk+-3.0
+   ```
+
+   For GTK 4:
+   ```bash
+   pkg-config --cflags --libs gtk+-4.0
+   ```
+
+---
+
+### After Installation:
+
+Once installed, you can compile programs that use GTK with GCC. Here’s an example:
+
+```bash
+gcc `pkg-config --cflags gtk+-3.0` my_program.c -o my_program `pkg-config --libs gtk+-3.0`
+```
+
+This will compile `my_program.c` using the GTK 3 libraries.
+
+dm my discord (im.awsum) if you run into issues
+
+
+### 3. **For MacOs:**
 
 #### **Install GCC:**
 1. **Install Xcode Command Line Tools**:
@@ -84,7 +141,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
 
 ---
 
-### 3. **For Windows** 
-
+### 4. **For Windows** 
+*sigh*
 Not only is your operating system closed-source but it's also bloated, filled with a bunch of ads, has a ton of included spyware and it's not even free.  I won't type a single line of code for this operating system.
 I guess your bloated operating system supports Fortnite... You should go play that instead of trying to run code made for the superior Unix like operating systems.
