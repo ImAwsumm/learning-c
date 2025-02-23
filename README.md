@@ -7,6 +7,7 @@ If you want to try running some of the very simple programs I made you will need
 
 Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
 
+---
 
 ### 1. **For Linux (Ubuntu/Debian-based):**
 
@@ -44,9 +45,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    ```bash
    pkg-config --cflags --libs gtk+-3.0
    ```
-
 ---
-Certainly! Here are the instructions for installing **GCC** and **GTK** on **Arch Linux**.
 
 ### 1. **Install GCC on Arch Linux:**
 
@@ -103,6 +102,7 @@ This will compile `my_program.c` using the GTK 3 libraries.
 
 dm my discord (im.awsum) if you run into issues
 
+--- 
 
 ### 3. **For MacOs:**
 
