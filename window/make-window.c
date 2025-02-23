@@ -36,15 +36,20 @@ int main(int argc, char *argv[]) {
     // make a button and set the label to "Awsum Button"
     GtkWidget *display_text_button = gtk_button_new_with_label("Display Text");
 
+    
     // Create a label that will be updated
+        // Text is here
     GtkWidget *label = gtk_label_new("Text I guess...");
-
+    
+    
     // send a signal in the terminal when the button is clicked
     g_signal_connect(display_text_button, "clicked", G_CALLBACK(on_display_text_button_clicked), label);
 
-    // make a second button to close the window
+    // Button Closes the window 
+        // make a second button close the window
     GtkWidget *close_button = gtk_button_new_with_label("Close Window");
 
+    
     // send a signal to close the window when the button is clicked
     g_signal_connect(close_button, "clicked", G_CALLBACK(on_close_button_clicked), window);
 
