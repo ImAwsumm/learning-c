@@ -84,7 +84,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
 
 ---
 
-### 3. **For Windows**
+### 3. **For Windows** 
 
- No. 
- I guess your operating system supports Fortnite... You should go play that instead of trying to run code.
+Not only is your operating system closed-source but it's also bloated, filled with a bunch of ads, has a ton of included spyware and it's not even free.  I won't type a single line of code for this operating system.
+I guess your bloated operating system supports Fortnite... You should go play that instead of trying to run code made for the superior Unix like operating systems.
