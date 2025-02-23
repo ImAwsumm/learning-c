@@ -1,7 +1,3 @@
-Here's a more concise version of the README:
-
----
-
 # Gtk Window with Buttons and Dynamic Text
 
 A simple GTK application in C that creates a window with two buttons: one to display text when clicked and another to close the window.
