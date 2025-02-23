@@ -1,18 +1,34 @@
-### In order to compile the C code you will have to run this command 
-`` gcc `pkg-config --cflags gtk+-3.0` -o window make-window.c `pkg-config --libs gtk+-3.0`  `` 
+Here's a more concise version of the README:
 
-This C program demonstrates how to create a basic GUI (graphical user interface) using the GTK library.
+---
 
+# Gtk Window with Buttons and Dynamic Text
 
-## **Key Features:**
-  
-  **Window Creation:**.
-    - the window is created and is set to a default size of 1920*1080 pixels
-    - The window is titled "My First Window" and is set to a default size of 1920 * 1080 pixels
-      (*1920x1080 is a very popular screen resolution usually reffered as 1080p*)
-      
-## **GTK Main Loop:**
-   - The `gtk_main()` function starts the main event loop.  This is responsible for the user interactions with the window.  
+A simple GTK application in C that creates a window with two buttons: one to display text when clicked and another to close the window.
 
-#### **What does this do?**
-This program is to demonstrate how to set up a basic GTK window with C.
+## Features:
+- **Display Text Button**: Updates the window text when clicked.
+- **Close Window Button**: Closes the window when clicked.
+
+## Requirements:
+- **GTK 3.0**
+    (windows version is **not** coming because windows sucks.)
+- **C Compiler**
+      - (gcc)
+
+## Installation & Usage:
+
+1. **Install GTK 3.0**:
+   ```bash
+   sudo apt-get install libgtk-3-dev
+   ```
+
+2. **Compile the Code**:
+   ```bash
+   gcc -o gtk_text_window gtk_text_window.c $(pkg-config --cflags --libs gtk+-3.0)
+   ```
+
+4. **Run the Application**:
+   ```bash
+   ./gtk_text_window
+   ```
