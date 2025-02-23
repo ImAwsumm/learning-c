@@ -88,9 +88,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    pkg-config --cflags --libs gtk+-4.0
    ```
 
----
-
-### After Installation:
+  **After Installation:**
 
 Once installed, you can compile programs that use GTK with GCC. Here’s an example:
 
