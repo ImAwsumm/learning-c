@@ -24,10 +24,10 @@ A simple GTK application in C that creates a window with two buttons: one to dis
    ```
 3. **Compile the Code**:
    ```bash
-   gcc -o gtk_text_window gtk_text_window.c $(pkg-config --cflags --libs gtk+-3.0)
+   gcc -o SimpleAwsumWindow makewindow.c $(pkg-config --cflags --libs gtk+-3.0)
    ```
 
 4. **Run the Application**:
    ```bash
-   ./gtk_text_window
+   ./SimpleAwsumWindow
    ```
