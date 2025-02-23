@@ -2,7 +2,8 @@
 
 A simple GTK application in C that creates a window with two buttons: one to display text when clicked and another to close the window.
 
-## Features:
+## Features: 
+*there are very few features*
 - **Display Text Button**: Updates the window text when clicked.
 - **Close Window Button**: Closes the window when clicked.
 
