@@ -143,3 +143,5 @@ dm my discord (im.awsum) if you run into issues
 *sigh*
 Not only is your operating system closed-source but it's also bloated, filled with a bunch of ads, has a ton of included spyware and it's not even free.  I won't type a single line of code for this operating system.
 I guess your bloated operating system supports Fortnite... You should go play that instead of trying to run code made for the superior Unix like operating systems.
+
+I'd like to point out that **I use** FreeBSD and **Arch btw**...
