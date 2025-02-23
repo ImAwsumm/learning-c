@@ -9,7 +9,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
 
 ---
 
-### 1. **For Linux (Ubuntu/Debian-based):**
+### **For Linux (Ubuntu/Debian-based):**
 
 #### **Install GCC:**
 1. **Update your package list**:
@@ -47,7 +47,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    ```
 ---
 
-### 1. **Install GCC on Arch Linux:**
+### **For Arch Linux:**
 
 1. **Update your package database**:
    ```bash
@@ -83,7 +83,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    pkg-config --cflags --libs gtk+-3.0
    ```
 
-   For GTK 4:
+   For GTK 4: (not needed)
    ```bash
    pkg-config --cflags --libs gtk+-4.0
    ```
@@ -104,7 +104,7 @@ dm my discord (im.awsum) if you run into issues
 
 --- 
 
-### 3. **For MacOs:**
+### **For MacOs:**
 
 #### **Install GCC:**
 1. **Install Xcode Command Line Tools**:
