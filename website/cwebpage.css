@@ -63,7 +63,8 @@ pre code {
     border: 1px solid #ccc;
     font-size: 14px;
     font-family: 'Courier New', Courier, monospace;
-    overflow-x: auto; /* Adds horizontal scroll for long lines */
+    overflow-x: auto; 
+    /* Adds horizontal scroll for long lines I don't really like it I might remove this in the future we will see ...*/
 }
 
 /* Styling for the overall container */
