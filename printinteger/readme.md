@@ -1,7 +1,7 @@
 # Simple C Program
 
 This is a simple C program that takes an integer input from the user and displays it back.
----
+
 ## Code
 
 ```c
