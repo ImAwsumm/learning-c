@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     // Connect the button click event to update the label text
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), label);
 
-    // Connect the "destroy" event to the function to close the app (aka: alt f4)
+    // Connect the "destroy" event to the function to actually close the program
     g_signal_connect(window, "destroy", G_CALLBACK(on_window_destroy), NULL);
 
     // Add the vbox to the window
@@ -50,8 +50,5 @@ int main(int argc, char *argv[]) {
 
     // Start the GTK main loop
     gtk_main();
-
     return 0;
-
-    // gtk is ez
 }
