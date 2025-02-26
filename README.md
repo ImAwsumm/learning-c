@@ -28,6 +28,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    gcc --version
    ```
    This will display the installed version of GCC.
+   If it says "unknown command" you will have to try installing it another way
 
 #### **Install GTK:**
 1. **Install GTK development libraries**:
