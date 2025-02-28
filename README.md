@@ -37,11 +37,6 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    sudo apt install libgtk-3-dev
    ```
 
-   For GTK 4,: (Optional)
-   ```bash
-   sudo apt install libgtk-4-dev
-   ```
-
 2. **Verify GTK installation** (for GTK 3):
    ```bash
    pkg-config --cflags --libs gtk+-3.0
