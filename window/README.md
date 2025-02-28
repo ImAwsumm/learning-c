@@ -1,5 +1,7 @@
 # Gtk Window with Buttons and Dynamic Text
 
+I am currently working on making a gui calcultor and this is my basis for it.
+
 A simple GTK application in C that creates a window with two buttons: one to display text when clicked and another to close the window.
 
 ## Features: 
