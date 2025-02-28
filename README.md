@@ -67,12 +67,6 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    sudo pacman -S gtk3
    ```
 
-   For **GTK 4**, if you prefer the newer version, run:
-   (not needed for my projects)
-   ```bash
-   sudo pacman -S gtk4
-   ```
-
 3. **Verify GTK installation**:
    For GTK 3, you can check the installation with:
    ```bash
@@ -116,11 +110,6 @@ dm my discord (im.awsum) if you run into issues
    For GTK 3:
    ```bash
    brew install gtk+3
-   ```
-
-   For GTK 4 ( you won't need it here)
-   ```bash
-   brew install gtk4
    ```
 
 3. **Verify GTK installation**:
