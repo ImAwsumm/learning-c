@@ -1,75 +1,47 @@
 #include <gtk/gtk.h>
 
 // This will be called when the button is clicked to display text
-static void on_display_text_button_clicked(GtkWidget *widget, gpointer data) {
-    // Get the label widget (passed as data) and set new text
-    GtkLabel *label = GTK_LABEL(data);
+static void on_display_text_button_clicked(GtkWidget *widget, GtkLabel *label) {
     gtk_label_set_text(label, "Button clicked! Awsum text displayed!");
 }
 
-// This function will be called when the window is ALT f4'd (Closed) 
+// This function will be called when the window is closed
 static void on_window_destroy(GtkWidget *widget, gpointer data) {
     gtk_main_quit();
 }
 
-// This will be called when the close button is clicked
-static void on_close_button_clicked(GtkWidget *widget, gpointer data) {
-    gtk_widget_destroy(GTK_WIDGET(data));  // Closes the window
-}
-
 int main(int argc, char *argv[]) {
-    // start gtk
+    // Initialize GTK
     gtk_init(&argc, &argv);
-
-    // Actually creates the main window
+    
+    // Create the main window
     GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    
-    // set a title for the window (Awsum Window)
     gtk_window_set_title(GTK_WINDOW(window), "Awsum Window");
-
-    // set resolution or window size
     gtk_window_set_default_size(GTK_WINDOW(window), 1920, 1080);
-
-    // close the window when a signal is received
     g_signal_connect(window, "destroy", G_CALLBACK(on_window_destroy), NULL);
-
-    // make a button and set the label to "Awsum Button"
-    GtkWidget *display_text_button = gtk_button_new_with_label("Display Text");
-
     
-    // Create a label that will be updated
-        // Text is here
+    // Create widgets
+    GtkWidget *display_text_button = gtk_button_new_with_label("Display Text");
+    GtkWidget *close_button = gtk_button_new_with_label("Close Window");
     GtkWidget *label = gtk_label_new("Text I guess...");
     
+    // Connect signals
+    g_signal_connect(display_text_button, "clicked", 
+                     G_CALLBACK(on_display_text_button_clicked), label);
+    g_signal_connect(close_button, "clicked", 
+                     G_CALLBACK(gtk_widget_destroy), window);
     
-    // send a signal in the terminal when the button is clicked
-    g_signal_connect(display_text_button, "clicked", G_CALLBACK(on_display_text_button_clicked), label);
-
-    // Button Closes the window 
-        // make a second button close the window
-    GtkWidget *close_button = gtk_button_new_with_label("Close Window");
-
-    
-    // send a signal to close the window when the button is clicked
-    g_signal_connect(close_button, "clicked", G_CALLBACK(on_close_button_clicked), window);
-
-    // create a vertical box (vbox) to space the buttons from each other
+    // Create layout
     GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
-
-    // add the label to the vbox
     gtk_box_pack_start(GTK_BOX(vbox), label, FALSE, FALSE, 0);
-
-    // add the buttons to the vbox
     gtk_box_pack_start(GTK_BOX(vbox), display_text_button, FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(vbox), close_button, FALSE, FALSE, 0);
-
-    // add the vbox to the window
+    
+    // Add layout to window and display
     gtk_container_add(GTK_CONTAINER(window), vbox);
-
-    // show the "window"
-    gtk_widget_show_all(window);
+    gtk_widget_show_all(window);   
+    // Start main loop
     gtk_main();
-
-    // gtk is so ez :)
+    
     return 0;
 }
