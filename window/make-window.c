@@ -60,11 +60,9 @@ int main(int argc, char *argv[]) {
     GtkWidget *center_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_box_set_homogeneous(GTK_BOX(center_box), TRUE);
     gtk_box_pack_start(GTK_BOX(center_box), vbox, FALSE, FALSE, 0);
-    
     // Add layout to window and display
     gtk_container_add(GTK_CONTAINER(app->window), center_box);
     gtk_widget_show_all(app->window);
-    
     // Start main loop
     gtk_main();
     
