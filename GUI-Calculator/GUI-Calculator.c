@@ -9,8 +9,3 @@
 #define MAX_EXPR_LEN 256
 
 typedef struct {
-    GtkWidget *result_label;
-    GtkWidget *entry;
-} CalculatorWidgets;
-
-//
