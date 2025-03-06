@@ -5,9 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 
-
 #define MAX_EXPR_LEN 256
-
 typedef struct {
     GtkWidget *result_label;
     GtkWidget *entry;
@@ -24,5 +22,3 @@ static gboolean validate_input(const char *equation, GError **error) {
     int op_count = 0;
     char prev_char = ' ';
     gboolean in_number = FALSE;
-
-
