@@ -22,3 +22,9 @@ static gboolean validate_input(const char *equation, GError **error) {
     int op_count = 0;
     char prev_char = ' ';
     gboolean in_number = FALSE;
+    while (*equation) {
+        if (isdigit(*equation) || *equation == '.') {
+            if (!in_number) {
+                num_count++;  // Starting a new number
+                in_number = TRUE;
+            }
