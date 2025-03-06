@@ -20,3 +20,9 @@ static gboolean validate_input(const char *equation, GError **error) {
                     "Empty expression (I can't calculate your thoughts... yet)");
         return FALSE;
     }
+    int num_count = 0;
+    int op_count = 0;
+    char prev_char = ' ';
+    gboolean in_number = FALSE;
+
+
