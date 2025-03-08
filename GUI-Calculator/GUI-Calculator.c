@@ -154,24 +154,7 @@ static void on_button_clicked(GtkWidget *widget, gpointer data) {
         char result_text[MAX_EXPR_LEN];
         snprintf(result_text, sizeof(result_text), "Result: %.2f", result);
         gtk_label_set_text(GTK_LABEL(widgets->result_label), result_text);
-    } else {
-
-        // Check if the buffer is exeeded
-        size_t current_len = strlen(current_text);
-        if (current_len >= MAX_EXPR_LEN - 3) {
-            gtk_label_set_text(GTK_LABEL(widgets->result_label),
-                             "Error: Expression too long (Your computer sucks haha!n])");
-            return;
-        }
-        // Add spaces
-        if (strchr("+-*/", button_text[0]) != NULL) {
-            snprintf(new_text, sizeof(new_text), "%s %s ", current_text, button_text);
-        } else {
-            snprintf(new_text, sizeof(new_text), "%s%s", current_text, button_text);
-        }
-        gtk_entry_set_text(GTK_ENTRY(widgets->entry), new_text);
     }
-}
 static void create_window(void) {
     GtkWidget *window, *grid, *button;
     CalculatorWidgets *widgets = g_new0(CalculatorWidgets, 1);
@@ -184,18 +167,3 @@ static void create_window(void) {
   //You can change the resolution I guess
   //I usually use 1080p but since this is a calculator idk..
 
-    // Create a grid in order to add the buttons later
-    grid = gtk_grid_new();
-    gtk_container_add(GTK_CONTAINER(window), grid);
-    gtk_grid_set_row_spacing(GTK_GRID(grid), 5);
-    gtk_grid_set_column_spacing(GTK_GRID(grid), 5); // smaller spacing
-    gtk_container_set_border_width(GTK_CONTAINER(grid), 10);  // Border padding because it looks Awsum
-
-    // Create the input field
-    widgets->entry = gtk_entry_new();
-    gtk_editable_set_editable(GTK_EDITABLE(widgets->entry), FALSE); //read only because you can mess stuff up...
-    gtk_grid_attach(GTK_GRID(grid), widgets->entry, 0, 0, 4, 1);
-
-    // Label to show results
-    widgets->result_label = gtk_label_new("Result: ");
-    gtk_grid_attach(GTK_GRID(grid), widgets->result_label, 0, 1, 4, 1);
