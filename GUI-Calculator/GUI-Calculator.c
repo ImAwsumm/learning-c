@@ -208,4 +208,4 @@ static void create_window(void) {
         "4", "5", "6", "*",
         "1", "2", "3", "-",
         "0", ".", "=", "+",
-        "Clear"                  // The "mistake" button
+        "C"              // The "mistake" button
