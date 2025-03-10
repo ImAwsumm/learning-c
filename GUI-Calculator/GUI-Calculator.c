@@ -208,4 +208,32 @@ static void create_window(void) {
         "4", "5", "6", "*",
         "1", "2", "3", "-",
         "0", ".", "=", "+",
-        "C"              // The "mistake" button
+        "C"                  // The "mistake" button
+
+// Adding a second layout as an option may be a future plan idk...
+    };
+    // Create buttons
+    for (int i = 0; i < 17; i++) {
+        button = gtk_button_new_with_label(button_labels[i]);
+        g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), widgets);
+        if (i == 16) {
+            // The clear button is different because...      Yes.
+            gtk_grid_attach(GTK_GRID(grid), button, 0, 6, 4, 1);
+        } else {
+            gtk_grid_attach(GTK_GRID(grid), button, i % 4, 2 + i / 4, 1, 1); // everything goes in the grid nothing outside.
+// assign every button to it's right value (integer)
+        }
+    }
+    // Clear the window 
+    g_signal_connect_swapped(window, "destroy", G_CALLBACK(g_free), widgets);
+    // Display the window
+    gtk_widget_show_all(window);
+}
+// The main function
+int main(int argc, char *argv[]) {
+    gtk_init(&argc, &argv);  // Wake up GTK
+    create_window();
+    gtk_main();             // Keep the party going until someone clicks the X and closes this :(
+    return 0;
+// this is only going public once this is polished and I am happy with the result
+}
