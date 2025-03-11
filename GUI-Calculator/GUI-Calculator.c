@@ -11,6 +11,8 @@ typedef struct {
 } CalculatorWidgets;
 
 // CSS styling for the calculator
+// I felt like this was the next step
+
 const char *css_data = 
     "window { background-color: #2e2e2e; }"
     "entry { font-size: 24px; font-weight: bold; margin: 10px; border-radius: 5px; background-color: #1e1e1e; color: white; min-height: 50px; }"
