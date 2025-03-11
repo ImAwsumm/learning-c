@@ -88,8 +88,7 @@ If your Operating system is not listed you can still install it but you have to 
 
 - Either use the buttons to type or your keyboard
 - Use operators (+, -, *, /) for calculations
-- Press the 'C' button to clear the input and type new e
-equations
+- Press the 'C' button to clear the input and type new equations
 
 ## Error Handling
 The calculator handles various error cases including; divding by zero, having an Invalid character syntax, sending unrecognized numbers and sending an empty equation
@@ -101,8 +100,7 @@ My discord : ``im.awsum``
 GPLv3
 
 ## Contributing
-
-Feel free to submit issues, fork the repository, and create pull requests for any improvements even if minor.
+Feel free to submit issues, fork the repository, and create pull requests for any improvements even if minor.  If you're not familiar with github you can also   reach out through my discord.
 My discord : ``im.awsum``
 
 ## Forking or Modifying 
