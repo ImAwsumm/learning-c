@@ -72,7 +72,7 @@ cd GUI-Calculator
 compile with 
 
 ```bash
-gcc Calculator.c -o calculator $(pkg-config --cflags --libs gtk+-3.0) -lm
+gcc GUI-Calculator.c -o calculator $(pkg-config --cflags --libs gtk+-3.0) -lm
 ```
 execute with
 
