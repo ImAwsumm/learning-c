@@ -90,7 +90,8 @@ If your Operating system is not listed you can still install it but you have to 
 
 - Either use the buttons to type or your keyboard
 - Use operators (+, -, *, /) for calculations
-- Press the 'C' button to clear the input
+- Press the 'C' button to clear the input and type new e
+equations
 
 ## Error Handling
 The calculator handles various error cases including; divding by zero, having an Invalid character syntax, sending unrecognized numbers and sending an empty equation
