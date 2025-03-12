@@ -3,6 +3,7 @@
 ~~I am currently working on making a gui calcultor~~ and this is my basis for it.
 The calculator is out!
 A simple GTK application in C that creates a window with two buttons: one to display text when clicked and another to close the window.
+This is not a very useful program...
 
 ## Features: 
 *there are very few features*
