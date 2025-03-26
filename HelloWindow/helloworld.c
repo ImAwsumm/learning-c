@@ -15,7 +15,6 @@ static void on_window_destroy(GtkWidget *widget, gpointer data) {
 
 int main(int argc, char *argv[]) {
 
-    
     // Initialize GTK
     gtk_init(&argc, &argv);
 
