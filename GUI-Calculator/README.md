@@ -113,4 +113,4 @@ this is based on a calculator a friend of mine made in python
 Go check it out !
 
 Try forking this and modifying it in your own way 
-I read a lot of code from FOSS to improve my understanding of C 
+I read a lot of code from FOSS (free and open source software) to improve my understanding of C 
