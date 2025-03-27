@@ -111,3 +111,5 @@ If it's not accepted then you should make a fork.
 this is based on a calculator a friend of mine made in python
 [@iambetter27](https://github.com/iambetter27)
 Go check it out !
+
+Try forking this and modifying it in your own way 
