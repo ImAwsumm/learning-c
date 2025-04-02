@@ -58,6 +58,9 @@ sudo pkg install gtk3
 sudo pkg install gcc
 sudo pkg install pkgconf
 ```
+
+Oops I forgot windows..
+
 ---
 
 ## Building and Running
