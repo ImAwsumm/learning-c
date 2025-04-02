@@ -59,7 +59,7 @@ sudo pkg install gcc
 sudo pkg install pkgconf
 ```
 
-Oops I forgot windows..
+Oops I forgot the windows install guide..
 
 ---
 
