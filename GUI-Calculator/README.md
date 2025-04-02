@@ -24,17 +24,15 @@ dm ```im.awsum``` on discord for suggestions
 - GCC compiler
 - pkg-config
 
+---
+
+# Installation guides
 ### Arch Linux
-Install GTK3 and build dependencies
 ```bash
 sudo pacman -S gtk3 base-devel
 sudo pacman -S gcc pkgconf
 sudo pacman -S git
 ```
-Install compiler and development tools
-
-Follow the same instructions to download the code
-Dm my discord ``` im.awsum ```
 
 ### Ubuntu/Debian/Mint
 ```bash
