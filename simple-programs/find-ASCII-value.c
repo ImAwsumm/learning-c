@@ -5,7 +5,7 @@ int main() {
     scanf("%c", &c);  
   
   // %d will display the ascii value of the character
-    printf("ASCII value of %c = %d", c, c);
+    printf("The ASCII value of %c is %d", c, c);
     
     return 0;
 }
