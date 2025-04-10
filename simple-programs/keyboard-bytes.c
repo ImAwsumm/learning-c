@@ -1,8 +1,9 @@
 #include <stdio.h>
 int main() {
-  int a;
-  long double a;
-  printf("Size of long double = %zu bytes\n", sizeof(a));
-  printf("Size of int = %zu bytes \n", sizeof(a));
-  return 0;
+    int i;
+    long double ld;
+    printf("Size of int = %zu bytes\n", sizeof(i));
+    printf("Size of long double = %zu bytes\n", sizeof(ld));
+
+    return 0;
 }
