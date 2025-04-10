@@ -32,7 +32,9 @@ int main(int argc, char *argv[]) {
     // Create the main window
     app->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(app->window), "Awsum Window");
-    gtk_window_set_default_size(GTK_WINDOW(app->window), 1920, 1080);
+
+    // The resolution can be modified 
+    gtk_window_set_default_size(GTK_WINDOW(app->window), 1200, 720);
     gtk_container_set_border_width(GTK_CONTAINER(app->window), 10);
     g_signal_connect(app->window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     
@@ -60,9 +62,11 @@ int main(int argc, char *argv[]) {
     GtkWidget *center_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
     gtk_box_set_homogeneous(GTK_BOX(center_box), TRUE);
     gtk_box_pack_start(GTK_BOX(center_box), vbox, FALSE, FALSE, 0);
+    
     // Add layout to window and display
     gtk_container_add(GTK_CONTAINER(app->window), center_box);
     gtk_widget_show_all(app->window);
+    
     // Start main loop
     gtk_main();
     
