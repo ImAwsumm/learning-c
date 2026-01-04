@@ -242,7 +242,8 @@ static void create_window(void) {
         "C"
     };
     
-    // Button styles
+    // This is the button chart for the style 
+    // it assigns the right style to the right button
     const char *button_styles[] = {
         "number", "number", "number", "operator",
         "number", "number", "number", "operator",
