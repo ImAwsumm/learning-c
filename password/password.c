@@ -3,22 +3,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+//
+    // Lower bound
+    int lb = 10; 
+    // Upper bound
+    int ub = 99;
+
 int entropy()
 {
     unsigned int random_buffer[32];
     getentropy(random_buffer, sizeof(random_buffer)) == 0;
     return *random_buffer;
 }
+int srandtwo()
+{
+    srand(time(NULL));
+    int sec = (rand() % (ub - lb + 1)) + lb;
+    return sec;
+}
 
 int main()
 {
-    // Lower bound
-    int lb = 10; 
-    // Upper bound
-    int ub = 99;
 
     printf("\n[1] Algorithm using the rand(); function \n");
     printf("[2] Algorithm using the srand(); function\n");
+    printf("[3] Algorithm using system entropy as a seed for the srand(); function\n");
 
     int choice;
     scanf("%d", &choice);
@@ -31,11 +40,14 @@ int main()
     }
     else if (choice == 2 )
     {
+	for (int i = 1; i <= 5; i++)
+	{
         srand(time(NULL)); 
-	int second = (rand() % (ub - lb + 1)) + lb;
-	//int second = srand(rand(NULL));
+	int second = (srandtwo() % (ub - lb +1)) + lb;
     	printf("\nA \"more\" random value: %d\n", second );
-    	return 0;
+	sleep(2);
+	}
+	return 0;
     }
     else if (choice == 3 )
     {
@@ -43,10 +55,15 @@ int main()
 	int third = (entropy() % (ub - lb + 1)) + lb;
 	printf("\nA pretty random number: %d\n", third);
     }
+    else if (choice == 0 )
+    {
+	return 0;
+    }
     else
     {
 	printf("\nYou're stupid\n");
 	return 0;
     }
+
     return 0;
 }
