@@ -2,7 +2,43 @@
 #include <string.h>
 #include <stdlib.h>
 
+int c;
+int choice = -1;
+
+void menu(int c)
+{
+// action when menu option is chosen
+    if (choice != -1) 
+    {
+        	switch(choice) 
+        	{
+        	        case 0:
+        	    	    clear();
+        	    	    printw("\nInstall dotfiles\n");
+        	    	    break;
+        	        case 1:
+        	    	    mvprintw(LINES-2, 0, "Plan B");
+        	    	    break;
+        	        case 2:
+        	    	    mvprintw(LINES-2, 0, "Number three");
+        	        break;
+        	        case 3:
+        	            mvprintw(LINES-2, 0, "Fourth option");
+        	        break;
+        	        case 4:
+        	    	       endwin();
+			       break;
+        	}
+        	refresh();
+        	getch();
+        	choice = -1;
+    }
+    refresh();
+}
 #define MAX_ITEMS 5
+
+
+
 
 int main() 
 {
@@ -24,8 +60,6 @@ int main()
     	};
 
     	int highlighted = 0;
-    	int choice = -1;
-    	int c;
 
     	// Main menu loop
     	while(1) 
@@ -67,33 +101,7 @@ int main()
 
     	        }
    
-    	        // action when menu option is chosen
-    	        if (choice != -1) 
-    	        {
-    	            	switch(choice) 
-    	            	{
-		    	        case 0:
-		    	    	    clear();
-		    	    	    printw("\nInstall dotfiles\n");
-		    	    	    break;
-		    	        case 1:
-		    	    	    mvprintw(LINES-2, 0, "Plan B");
-		    	    	    break;
-    	            	        case 2:
-		    	    	    mvprintw(LINES-2, 0, "Number three");
-    	            	        break;
-    	            	        case 3:
-    	            	            mvprintw(LINES-2, 0, "Fourth option");
-    	            	        break;
-    	            	        case 4:
-    	            	    	       endwin();
-    	            		       return 0;
-    	            	}
-    	            	refresh();
-    	            	getch();
-    	            	choice = -1;
-		}
-		refresh();
+		menu(c);
 	}
 	endwin();
 	return 0;
