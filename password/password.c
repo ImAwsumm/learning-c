@@ -8,6 +8,7 @@
     int lb = 10; 
     // Upper bound
     int ub = 99;
+	struct timespec install_timer;
 
 int entropy()
 {
@@ -45,7 +46,9 @@ int main()
         srand(time(NULL)); 
 	int second = (srandtwo() % (ub - lb +1)) + lb;
     	printf("\nA \"more\" random value: %d\n", second );
-	sleep(2);
+	        install_timer.tv_sec = 2;
+	        install_timer.tv_nsec = 00000000L;
+	        nanosleep(&install_timer, NULL);
 	}
 	return 0;
     }
