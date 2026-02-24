@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 float pver;
 
 
@@ -14,12 +13,18 @@ int main()
     {
     case 141:
         printf("Case 1 is Matched.\n");
+	func-one();
+	__attribute__ ((fallthrough));
 
     case 200:
         printf("Case 2 is Matched.\n");
+	func-two();
+	__attribute__ ((fallthrough));
 
     case 300:
         printf("Case 3 is Matched.\n");
+	func-the();
+	__attribute__ ((fallthrough));
 
 	goto end;
     default:
@@ -30,4 +35,17 @@ int main()
 
     }
     return 0;
+}
+
+void func-one()
+{
+    printf("Hey\n");
+}
+void func-two()
+{
+    printf("How\n");
+}
+void func-the()
+{
+    printf("Are you?\n");
 }
