@@ -8,3 +8,10 @@ Thoses simple C programs will most likely not get any further updates since I on
 gcc pwd.c -o pwd -Wall
 ./pwd
 ```
+
+compile switch-fallthrough using make
+
+```sh
+make compilation
+./switch-fallthrough
+```
