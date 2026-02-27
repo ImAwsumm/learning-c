@@ -1,7 +1,8 @@
 FLAGS = -Werror -Wall -Wextra
 
 compilation:
-	gcc $(FLAGS) -c switch-fallthrough.c
+	@#gcc $(FLAGS) -c switch-fallthrough.c
+	gcc switch-fallthrough.c -o switch-fallthrough
 
 clean: 
 	@rm switch-fallthrough.o
