@@ -3,17 +3,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-//
+
     // Lower bound
-    int lb = 10; 
+    unsigned int lb = 10; 
     // Upper bound
-    int ub = 99;
-	struct timespec install_timer;
+    unsigned int ub = 99;
+
+    struct timespec install_timer;
 
 int entropy()
 {
     unsigned int random_buffer[32];
-    getentropy(random_buffer, sizeof(random_buffer)) == 0;
+    if (getentropy(random_buffer, sizeof(random_buffer)) != 0) 
+    {
+	perror("getentropy failed");
+    	exit(EXIT_FAILURE);
+    }
     return *random_buffer;
 }
 int srandtwo()
@@ -43,11 +48,12 @@ int main()
     {
 	for (int i = 1; i <= 5; i++)
 	{
-        srand(time(NULL)); 
-	int second = (srandtwo() % (ub - lb +1)) + lb;
-    	printf("\nA \"more\" random value: %d\n", second );
-	        install_timer.tv_sec = 2;
-	        install_timer.tv_nsec = 00000000L;
+	    srand(time(NULL)); 
+	    int second = (srandtwo() % (ub - lb +1)) + lb;
+    	    printf("\nA \"more\" random value: %d\n", second );
+
+	        install_timer.tv_sec = 0;
+	        install_timer.tv_nsec = 500000000L;
 	        nanosleep(&install_timer, NULL);
 	}
 	return 0;
@@ -55,8 +61,8 @@ int main()
     else if (choice == 3 )
     {
 	// use system entropy in order to generate a random number
-	int third = (entropy() % (ub - lb + 1)) + lb;
-	printf("\nA pretty random number: %d\n", third);
+	unsigned int third = (entropy() % (ub - lb + 1)) + lb;
+	printf("\nA pretty random number: %u\n", third);
     }
     else if (choice == 0 )
     {
