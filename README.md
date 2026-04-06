@@ -18,6 +18,10 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    ```bash
    sudo apt update
    ```
+   Arch Linux:
+   ```bash
+   sudo pacman -Syu
+   ```
 
 2. **Install GCC**:
    ```bash
