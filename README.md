@@ -15,6 +15,7 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
 
 #### **Install GCC:**
 1. **Update your package list**:
+   Debian:
    ```bash
    sudo apt update
    ```
@@ -23,13 +24,20 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    sudo pacman -Syu
    ```
 
-2. **Install GCC**:
+3. **Install GCC**:
+   
+   GCC is usually installed on all modern linux distros
+   Debian:
    ```bash
    sudo apt install build-essential
    ```
+   Arch Linux:
+   ```bash
+   sudo pacman -S base-devel
+   ```
    This will install GCC along with other essential development tools.
 
-3. **Verify GCC installation**:
+5. **Verify GCC installation**:
    ```bash
    gcc --version
    ```
@@ -42,42 +50,17 @@ Here are the instructions to install GCC & GTK on Linux, MacOs and Windows:
    ```bash
    sudo apt install libgtk-3-dev
    ```
+   Arch Linux:
+   ```bash
+   sudo pacman -S gtk3
+   ```
 
-2. **Verify GTK installation** (for GTK 3):
+3. **Verify GTK installation** (for GTK 3):
    ```bash
    pkg-config --cflags --libs gtk+-3.0
    ```
 ---
 
-### **For Arch Linux:**
-
-1. **Update your package database**:
-   ```bash
-   sudo pacman -Syu
-   ```
-
-2. **Install GCC**:
-   ```bash
-   sudo pacman -S base-devel
-   ```
-   The `base-devel` package group includes GCC and other essential tools for development.
-
-3. **Verify GCC installation**:
-   ```bash
-   gcc --version
-   ```
-### 2. **Install GTK**
-
-1. **Install GTK 3 (most commonly used)**:
-   ```bash
-   sudo pacman -S gtk3
-   ```
-
-3. **Verify GTK installation**:
-   For GTK 3, you can check the installation with:
-   ```bash
-   pkg-config --cflags --libs gtk+-3.0
-   ```
 
   **After Installation:**
 
