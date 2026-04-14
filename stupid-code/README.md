@@ -8,5 +8,11 @@ compile the code using the following command:
 make all
 ```
 
+
+## execution
+
 execute the files using the following commands:
 
+delete lines: ``./del``
+
+russian roulette: ``./kill-process``
