@@ -4,14 +4,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-    // Lower bound
-    unsigned int lb = 10; 
-    // Upper bound
-    unsigned int ub = 99;
+// Lower bound
+unsigned int lb = 10; 
+// Upper bound
+unsigned int ub = 99;
 
-    struct timespec install_timer;
+struct timespec install_timer;
 
-int entropy()
+int entropy(void)
 {
     unsigned int random_buffer[32];
     if (getentropy(random_buffer, sizeof(random_buffer)) != 0) 
@@ -21,14 +21,15 @@ int entropy()
     }
     return *random_buffer;
 }
-int srandtwo()
+
+int srandtwo(void)
 {
     srand(time(NULL));
     int sec = (rand() % (ub - lb + 1)) + lb;
     return sec;
 }
 
-int main()
+int main(void)
 {
 
     printf("\n[1] Algorithm using the rand(); function \n");
