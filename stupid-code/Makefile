@@ -14,3 +14,7 @@ all:
 zig:
 	$(ZIG) $(delete) $(ALL_FLAGS)
 	$(ZIG) $(kill_p) $(ALL_FLAGS) -Werror
+
+clean:
+	@rm kill-process
+	@rm del
