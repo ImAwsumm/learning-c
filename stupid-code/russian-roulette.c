@@ -6,7 +6,7 @@ int main(void)
     printf("Press 1 to kill a process\n");
 
     int input;
-    scanf("%d ", &input);
+    scanf("%d", &input);
 
     if (input == 1)
     {
@@ -21,6 +21,10 @@ int main(void)
 
 	// free the memory previously allocated to the command
 	free(cmd);
+    }
+    else
+    {
+	printf("Exiting..\n");
     }
 
     return 0;
