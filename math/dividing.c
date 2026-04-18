@@ -2,21 +2,14 @@
 #include <stdlib.h>
 
 #define EXP_ARGS 3
+#define PRECISION 5
 
 int main(int argc, char *argv[])
 {
     long int u_input;
     long int u_divider;
 
-    if (!(argc == EXP_ARGS))
-    {
-	printf("Type value\n");
-    	scanf("%ld", &u_input);
-
-	printf("Type divider\n");
-    	scanf("%ld", &u_divider);
-    }
-    else
+    if (argc == EXP_ARGS)
     {
 	char *endptr;
 	char *str_1 = argv[1];
@@ -25,6 +18,23 @@ int main(int argc, char *argv[])
 	char *endptr_t;
 	char *str_2 = argv[2];
 	u_divider = strtol(str_2, &endptr_t, 10);
+    }
+    else
+    {
+	printf("Type value\n");
+    	scanf("%ld", &u_input);
+
+	printf("Type divider\n");
+    	scanf("%ld", &u_divider);
+    }
+
+    //long int arr[PRECISION];
+    for (int i = PRECISION; i > 1; i--)
+    {
+	if (u_input % i == 0)
+	{
+	    break;
+	}
     }
 
     printf("You entered %ld\n", u_input);
