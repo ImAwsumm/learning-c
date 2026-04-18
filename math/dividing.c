@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
 	printf("Type divider\n");
     	scanf("%ld", &u_divider);
     }
-
+    int i;
     //long int arr[PRECISION];
-    for (int i = PRECISION; i > 1; i--)
+    for (i = PRECISION; i > 1; i--)
     {
 	if (u_input % i == 0)
 	{
@@ -37,8 +37,11 @@ int main(int argc, char *argv[])
 	}
     }
 
+    printf("%d", i);
+    
     printf("You entered %ld\n", u_input);
 
     printf("Divide by %ld\n", u_divider);
     return 0;
 }
+
