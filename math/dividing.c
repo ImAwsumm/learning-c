@@ -1,16 +1,21 @@
 #include <stdio.h>
-//#include <stdlib.h>
 
-int main()
+int main(int argc, char *argv[])
 {
     int u_input;
-    scanf("%d", &u_input);
+    int u_divider;
+
+    if (argc < 3)
+    {
+	printf("Type value\n");
+    	scanf("%d", &u_input);
+
+	printf("Type divider\n");
+    	scanf("%d", &u_divider);
+    }
 
     printf("You entered %d\n", u_input);
 
-    int u_divider;
-    scanf("%d", &u_divider);
     printf("Divide by %d\n", u_divider);
-
     return 0;
 }
