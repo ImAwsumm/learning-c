@@ -4,14 +4,18 @@
 //int main(int argc, char *argv[])
 int main(void)
 {
+    const char *word = malloc(32);
+    word = "Hi";
     printf("Type the X axis: ");
 
     int x;
-    scanf("%d", x);
-    printf("\nType the y axis: ");
+    scanf("%d", &x);
+    printf("Type the y axis: ");
 
+    while (getchar() != '\n');
     int y;
-    scanf("%d", y);
+    scanf("%d", &y);
+    printf("\n");
 
     if (!(x > 0 || y > 0))
     {
@@ -22,7 +26,9 @@ int main(void)
     {
 	for (int j = 0; j < x; j++)
 	{
+	    printf("%s ", word);
 	}
+	printf("\n");
     }
     return 0;
 }
