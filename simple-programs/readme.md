@@ -2,6 +2,7 @@
 
 Thoses simple C programs will most likely not get any further updates since I only made them to improve my C understanding 
 
+You can use ``make all`` in order to compile both pwd and switch-fallthrough
 
 # pwd 
 ```sh
