@@ -2,12 +2,15 @@
 #include <stdlib.h>
 
 #define EXP_ARGS 3
-#define PRECISION 5
+
+void get_input(int array_size);
 
 int main(int argc, char *argv[])
 {
     long int u_input;
     long int u_second_val;
+
+    int array_size;
 
     if (argc == EXP_ARGS)
     {
@@ -21,6 +24,9 @@ int main(int argc, char *argv[])
     }
     else
     {
+	printf("How many values are you inputting?\n");
+    	scanf("%d", &array_size);
+	
 	printf("Type value 1\n");
     	scanf("%ld", &u_input);
 
@@ -45,3 +51,9 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+void get_input(int array_size)
+{
+    long int value;
+    printf("Type value 1\n");
+    scanf("%ld", &value);
+}
