@@ -35,6 +35,11 @@ int main(int argc, char *argv[])
 	get_input(array_size);
     }
 
+    for (int i = 0; i < array_size; i++)
+    {
+	printf("%ld\n", values[i]);
+    }
+
     int i;
 
     for (i = u_input / 2 + 1; i > 1; i--)
@@ -56,7 +61,6 @@ int main(int argc, char *argv[])
 void get_input(int array_size)
 {
     int i;
-
     for (i = 1; i <= array_size; i++)
     {
 	long int temp_input;
@@ -64,6 +68,5 @@ void get_input(int array_size)
     	scanf("%ld", &temp_input);
 	int index = i - 1;
 	values[index] = temp_input;
-	printf("%ld\n", values[index]);
     }
 }
