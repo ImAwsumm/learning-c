@@ -5,6 +5,7 @@
 
 void get_input(int array_size);
 
+
 int main(int argc, char *argv[])
 {
     long int u_input;
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
 
     if (argc == EXP_ARGS)
     {
+	array_size = 3; /* hard coded (it shouldn't be for a long time) */
 	char *endptr;
 	char *str_1 = argv[1];
 	u_input = strtol(str_1, &endptr, 10);
@@ -26,13 +28,10 @@ int main(int argc, char *argv[])
     {
 	printf("How many values are you inputting?\n");
     	scanf("%d", &array_size);
-	
-	printf("Type value 1\n");
-    	scanf("%ld", &u_input);
-
-	printf("Type value 2\n");
-    	scanf("%ld", &u_second_val);
     }
+
+    double int values[array_size];
+
     int i;
     //long int arr[PRECISION];
     for (i = u_input / 2 + 1; i > 1; i--)
@@ -53,7 +52,11 @@ int main(int argc, char *argv[])
 
 void get_input(int array_size)
 {
-    long int value;
-    printf("Type value 1\n");
-    scanf("%ld", &value);
+    for (int i = 0; i < array_size; i++)
+    {
+	long int value;
+    	printf("Type value 1\n");
+    	scanf("%ld", &value);
+
+    }
 }
