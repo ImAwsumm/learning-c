@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     long int u_input;
-    long int u_divider;
+    long int u_second_val;
 
     if (argc == EXP_ARGS)
     {
@@ -17,19 +17,19 @@ int main(int argc, char *argv[])
 
 	char *endptr_t;
 	char *str_2 = argv[2];
-	u_divider = strtol(str_2, &endptr_t, 10);
+	u_second_val = strtol(str_2, &endptr_t, 10);
     }
     else
     {
-	printf("Type value\n");
+	printf("Type value 1\n");
     	scanf("%ld", &u_input);
 
-	printf("Type divider\n");
-    	scanf("%ld", &u_divider);
+	printf("Type value 2\n");
+    	scanf("%ld", &u_second_val);
     }
     int i;
     //long int arr[PRECISION];
-    for (i = PRECISION; i > 1; i--)
+    for (i = u_input / 2 + 1; i > 1; i--)
     {
 	if (u_input % i == 0)
 	{
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     
     printf("You entered %ld\n", u_input);
 
-    printf("Divide by %ld\n", u_divider);
+    printf("Divide by %ld\n", u_second_val);
     return 0;
 }
 
