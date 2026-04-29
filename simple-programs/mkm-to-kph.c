@@ -9,18 +9,17 @@
 #define km_to_miles 1.609344
 
 bool ignore_errors = false; /* globals */
-bool source_miles;  /* globals */
-bool out_miles;		/* globals */
-bool same_out_unit; /* globals */
 
-//void parse_values(int arg_offset, int number_of_values, char *arguments[]);
-void parse_values(bool no_convert, int arg_offset, int number_of_values, char *arguments[]);
+void parse_values(bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[]);
 
 int main(int argc, char *argv[])
 {
-	source_miles = false;
-	out_miles = false;
-	same_out_unit = true;
+	bool in_miles = false;
+	bool out_miles = false;
+	bool same_out_unit = true;
+
+	bool p_flag = false;
+	bool o_flag = false;
 
 	int args_before_values = 1;
     if (argc > min_args)
@@ -33,6 +32,8 @@ int main(int argc, char *argv[])
 			{
 				if (strcmp(argv[arg_read], "-o") == 0)
 				{
+					o_flag = true;
+
 					arg_read++;
 					printf("-o flag found\n");
 					if (strcmp(argv[arg_read], "miles") == 0 || strcmp(argv[arg_read], "mile") == 0)
@@ -64,11 +65,40 @@ int main(int argc, char *argv[])
 					}
 					args_before_values++;
 				}
-				else if (strcmp(argv[arg_read], "-p") == 0)
+				else if (strcmp(argv[arg_read], "-i") == 0)
 				{
-					printf("-p flag found\n");
-					args_before_values++;
+					p_flag = true;
+
 					arg_read++;
+					printf("-i flag found\n");
+					if (strcmp(argv[arg_read], "miles") == 0 || strcmp(argv[arg_read], "mile") == 0)
+					{
+						printf("Miles\n");
+						in_miles = true;
+						arg_read++;
+						args_before_values++;
+					}
+					else if (strcmp(argv[arg_read], "km") == 0 || strcmp(argv[arg_read], "kilometer") == 0)
+					{
+						printf("km\n");
+						in_miles = false;
+						arg_read++;
+						args_before_values++;
+					}
+					else
+					{
+						printf("Unspecified or unknwon unit\n");
+						if (!ignore_errors)
+						{
+							arg_read++;
+							args_before_values++;
+						}
+						else
+						{
+							printf("Invalid use of %s was ignored\n", argv[arg_read]);
+						}
+					}
+					args_before_values++;
 				}
 				else
 				{
@@ -78,13 +108,27 @@ int main(int argc, char *argv[])
 		}
     	int num_values = argc - args_before_values;
 
-		parse_values(same_out_unit, args_before_values, num_values, argv);
+		if (in_miles == out_miles)
+		{
+			same_out_unit = true;
+		}
+		else
+		{
+			same_out_unit = false;
+		}
+
+		if (p_flag == o_flag)
+		{
+		}
+
+
+		parse_values(same_out_unit, out_miles, args_before_values, num_values, argv);
     }
 
     return 0;
 }
 
-void parse_values(bool no_convert, int arg_offset, int number_of_values, char *arguments[])
+void parse_values(bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[])
 {
 
     long double all_values[number_of_values];
