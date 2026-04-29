@@ -13,9 +13,9 @@ int main(void)
 	// allocate the exact amount of memory to the command
 	int mem_needed = snprintf(NULL, 0, "sudo kill -9 $(ps -e -o pid= | shuf -n 1)") + 1;
 
-	char *cmd = malloc(mem_needed);
+	char *cmd = malloc((size_t)mem_needed);
 
-	snprintf(cmd, mem_needed,
+	snprintf(cmd, (size_t)mem_needed,
 		"sudo kill -9 $(ps -e -o pid= | shuf -n 1)");
 	system(cmd);
 

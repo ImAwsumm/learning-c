@@ -1,4 +1,4 @@
-ALL_FLAGS = -Wall -Wextra -Wpedantic -std=c99
+ALL_FLAGS = -Wall -Wextra -Wpedantic -std=c99 -Wconversion
 
 GCC = gcc
 ZIG = zig cc

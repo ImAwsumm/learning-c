@@ -8,7 +8,7 @@ keyboard = keyboard-bytes.c -o keyboard
 
 GCC = gcc
 cc = zig cc
-FG = -Wall -Wextra -Wpedantic
+FG = -Wall -Wextra -Wpedantic -Wconversion
 ER = -Werror
 BASE = -Wall -Wextra
 C99 = -std=c99
