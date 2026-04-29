@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
 
 #define min_args 1
@@ -7,26 +8,83 @@
 #define miles_to_km 0.6213712
 #define km_to_miles 1.609344
 
-bool ignore_errors = false;
-bool source_miles = true;
-bool same_out_unit = false;
+bool ignore_errors = false; /* globals */
+bool source_miles;  /* globals */
+bool out_miles;		/* globals */
+bool same_out_unit; /* globals */
 
-void parse_values(int arg_offset, int number_of_values, char *arguments[]);
+//void parse_values(int arg_offset, int number_of_values, char *arguments[]);
+void parse_values(bool no_convert, int arg_offset, int number_of_values, char *arguments[]);
 
 int main(int argc, char *argv[])
 {
+	source_miles = false;
+	out_miles = false;
+	same_out_unit = true;
+
+	int args_before_values = 1;
     if (argc > min_args)
     {
-		int args_before_values = 1;
+		if (argc > min_args + 2)
+		{
+			int arg_read = 0;
+
+			while (argc > arg_read)
+			{
+				if (strcmp(argv[arg_read], "-o") == 0)
+				{
+					arg_read++;
+					printf("-o flag found\n");
+					if (strcmp(argv[arg_read], "miles") == 0 || strcmp(argv[arg_read], "mile") == 0)
+					{
+						printf("Miles\n");
+						out_miles = true;
+						arg_read++;
+						args_before_values++;
+					}
+					else if (strcmp(argv[arg_read], "km") == 0 || strcmp(argv[arg_read], "kilometer") == 0)
+					{
+						printf("km\n");
+						out_miles = false;
+						arg_read++;
+						args_before_values++;
+					}
+					else
+					{
+						printf("Unspecified or unknwon unit\n");
+						if (!ignore_errors)
+						{
+							arg_read++;
+							args_before_values++;
+						}
+						else
+						{
+							printf("Invalid use of %s was ignored\n", argv[arg_read]);
+						}
+					}
+					args_before_values++;
+				}
+				else if (strcmp(argv[arg_read], "-p") == 0)
+				{
+					printf("-p flag found\n");
+					args_before_values++;
+					arg_read++;
+				}
+				else
+				{
+					arg_read++;
+				}
+			}
+		}
     	int num_values = argc - args_before_values;
 
-		parse_values(args_before_values, num_values, argv);
+		parse_values(same_out_unit, args_before_values, num_values, argv);
     }
 
     return 0;
 }
 
-void parse_values(int arg_offset, int number_of_values, char *arguments[])
+void parse_values(bool no_convert, int arg_offset, int number_of_values, char *arguments[])
 {
 
     long double all_values[number_of_values];
@@ -43,7 +101,7 @@ void parse_values(int arg_offset, int number_of_values, char *arguments[])
 	long double valid_results[number_of_values];
 	int num_valid_results = 0;
 
-	if (!same_out_unit)
+	if (!no_convert)
 	{
 		if (source_miles)
 		{
