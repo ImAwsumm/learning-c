@@ -7,34 +7,25 @@ leap_year = leap-year.c -o leap
 keyboard = keyboard-bytes.c -o keyboard
 
 GCC = gcc
-ZIG = zig cc
+cc = zig cc
 FG = -Wall -Wextra -Wpedantic
 ER = -Werror
+BASE = -Wall -Wextra
 C99 = -std=c99
 
-compilation:
-	@#gcc $(FLAGS) -c switch-fallthrough.c
-	gcc switch-fallthrough.c -o switch-fallthrough
-
-all:
-	gcc $(switch_compile_cmd) $(FG)
-	gcc $(pwd_compile) $(FG)
-	gcc $(keyboard) $(FG)
-	gcc $(leap_year) $(FG)
-
 base:
-	$(ZIG) $(speed_convert) $(FG) $(ER) $(C99)
-	$(ZIG) $(switch_compile_cmd) $(FG) $(ER) $(C99)
-	$(ZIG) $(keyboard) $(FG) $(ER) $(C99)
-	$(ZIG) $(leap_year) $(FG) $(ER)
-	$(ZIG) $(pwd_compile) $(FG) $(ER) 
-
+	$(cc) $(speed_convert) $(FG) $(ER) $(C99)
+	$(cc) $(switch_compile_cmd) $(FG) $(ER) $(C99)
+	$(cc) $(keyboard) $(BASE) $(ER) $(C99)
+	$(cc) $(leap_year) $(FG) $(ER) $(C99)
+	$(cc) $(pwd_compile) $(BASE) $(ER)
 
 clean: 
 	@rm switch-fallthrough
 	@rm leap
 	@rm pwd
 	@rm keyboard
+	@rm speed
 
 binary: compilation
 	gcc switch-fallthrough.o -o setup $(FLAGS)

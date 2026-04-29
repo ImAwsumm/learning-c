@@ -3,7 +3,7 @@
 
 bool isLeapYear(int year);
 
-int main() 
+int main(void) 
 {
     int year;
     printf("Enter a year: ");
