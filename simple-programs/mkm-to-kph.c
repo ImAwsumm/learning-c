@@ -5,8 +5,8 @@
 
 #define min_args 1
 #define period_length 60
-#define miles_to_km 0.6213712
-#define km_to_miles 1.609344
+#define miles_to_km 1.609344
+#define km_to_miles 0.621371192
 
 bool ignore_errors = false; /* globals */
 
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	bool out_miles = false;
 	bool same_out_unit = true;
 
-	bool p_flag = false;
+	bool i_flag = false;
 	bool o_flag = false;
 
 	int args_before_values = 1;
@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
 
 			while (argc > arg_read)
 			{
-				if (strcmp(argv[arg_read], "-o") == 0)
+				if (strcmp(argv[arg_read], "-i") == 0)
 				{
-					o_flag = true;
+					i_flag = true;
 
 					arg_read++;
-					printf("-o flag found\n");
+					printf("-i flag found\n");
 					if (strcmp(argv[arg_read], "miles") == 0 || strcmp(argv[arg_read], "mile") == 0)
 					{
 						printf("Miles\n");
@@ -65,12 +65,12 @@ int main(int argc, char *argv[])
 					}
 					args_before_values++;
 				}
-				else if (strcmp(argv[arg_read], "-i") == 0)
+				else if (strcmp(argv[arg_read], "-o") == 0)
 				{
-					p_flag = true;
+					o_flag = true;
 
 					arg_read++;
-					printf("-i flag found\n");
+					printf("-o flag found\n");
 					if (strcmp(argv[arg_read], "miles") == 0 || strcmp(argv[arg_read], "mile") == 0)
 					{
 						printf("Miles\n");
@@ -117,10 +117,10 @@ int main(int argc, char *argv[])
 			same_out_unit = false;
 		}
 
-		if (p_flag == o_flag)
+		if (!(i_flag || o_flag))
 		{
+			printf("No flags used\n");
 		}
-
 
 		parse_values(same_out_unit, out_miles, args_before_values, num_values, argv);
     }
@@ -130,7 +130,6 @@ int main(int argc, char *argv[])
 
 void parse_values(bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[])
 {
-
     long double all_values[number_of_values];
 	/* convert string to long double with strlol */
 
@@ -151,7 +150,7 @@ void parse_values(bool no_convert, bool source_miles, int arg_offset, int number
 		{
 			for (int i = 0; i < number_of_values; i++)
 			{
-				long double temp_value = all_values[i] * miles_to_km;
+				long double temp_value = all_values[i] * km_to_miles;
 				all_values[i] = temp_value;
 			}
 		}
@@ -159,7 +158,7 @@ void parse_values(bool no_convert, bool source_miles, int arg_offset, int number
 		{
 			for (int i = 0; i < number_of_values; i++)
 			{
-				long double temp_value = all_values[i] * km_to_miles;
+				long double temp_value = all_values[i] * miles_to_km;
 				all_values[i] = temp_value;
 			}
 		}
