@@ -4,31 +4,33 @@
 //int main(int argc, char *argv[])
 int main(void)
 {
-    const char *word = malloc(32);
-    word = "Hi";
+    char word[32];
+    snprintf(word, sizeof(word),
+			"Hi");
+
     printf("Type the X axis: ");
 
     int x;
     scanf("%d", &x);
     printf("Type the y axis: ");
 
-    while (getchar() != '\n');
+    while (getchar() != '\n'); /* clear the stdin input buffer */
     int y;
     scanf("%d", &y);
     printf("\n");
 
     if (!(x > 0 || y > 0))
     {
-	exit(1);
+		exit(1);
     }
 
     for (int i = 0; i < y; i++)
     {
-	for (int j = 0; j < x; j++)
-	{
-	    printf("%s ", word);
-	}
-	printf("\n");
+		for (int j = 0; j < x; j++)
+		{
+		    printf("%s ", word);
+		}
+		printf("\n");
     }
     return 0;
 }

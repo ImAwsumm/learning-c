@@ -30,30 +30,29 @@ int main(int argc, char *argv[])
     }
     else
     {
-	printf("How many values are you inputting?\n");
+		printf("How many values are you inputting?\n");
     	scanf("%d", &array_size);
-	get_input(array_size);
+		get_input(array_size);
     }
 
     for (int i = 0; i < array_size; i++)
     {
-	printf("%ld\n", values[i]);
+		printf("%ld\n", values[i]);
     }
 
     int i;
 
     for (i = u_input / 2 + 1; i > 1; i--)
     {
-	if (u_input % i == 0)
-	{
-	    break;
-	}
+		if (u_input % i == 0)
+		{
+		    break;
+		}
     }
 
     printf("%d\n", i);
     
     printf("You entered %ld\n", u_input);
-
     printf("Divide by %ld\n", u_second_val);
     return 0;
 }
