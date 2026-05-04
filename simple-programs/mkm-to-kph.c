@@ -8,15 +8,16 @@
 #define miles_to_km 1.609344
 #define km_to_miles 0.621371192
 
-bool ignore_errors = false; /* globals */
+bool ignore_errors = true; /* globals */
 
-void parse_values(bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[]);
+void parse_values(bool find_speed, bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[]);
 
 int main(int argc, char *argv[])
 {
 	bool in_miles = false;
 	bool out_miles = false;
 	bool same_out_unit = true;
+	bool allure_to_speed = true;
 
 	bool i_flag = false;
 	bool o_flag = false;
@@ -52,7 +53,7 @@ int main(int argc, char *argv[])
 					}
 					else
 					{
-						printf("Unspecified or unknwon unit\n");
+						printf("Unspecified or unknown unit\n");
 						if (!ignore_errors)
 						{
 							arg_read++;
@@ -100,6 +101,13 @@ int main(int argc, char *argv[])
 					}
 					args_before_values++;
 				}
+				else if (strcmp(argv[arg_read], "-a") == 0 || strcmp(argv[arg_read], "--allure") == 0)
+				{
+					
+					allure_to_speed = false;
+					arg_read++;
+					args_before_values++;
+				}
 				else
 				{
 					arg_read++;
@@ -117,18 +125,18 @@ int main(int argc, char *argv[])
 			same_out_unit = false;
 		}
 
-		if (!(i_flag || o_flag))
+		if (!(i_flag || o_flag || allure_to_speed))
 		{
 			printf("No flags used\n");
 		}
 
-		parse_values(same_out_unit, out_miles, args_before_values, num_values, argv);
+		parse_values(allure_to_speed, same_out_unit, out_miles, args_before_values, num_values, argv);
     }
 
     return 0;
 }
 
-void parse_values(bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[])
+void parse_values(bool find_speed, bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[])
 {
     long double all_values[number_of_values];
 	/* convert string to long double with strlol */
@@ -176,16 +184,39 @@ void parse_values(bool no_convert, bool source_miles, int arg_offset, int number
 			}
 	    }
 	
-	    long double result = period_length / input;
-	    valid_results[num_valid_results] = result;
+		if (find_speed)
+		{
+			long double result = period_length / input;
+	    	valid_results[num_valid_results] = result;
+		}
 	
 	    num_valid_results++;
 	}
 	
 	/* print values from the array */
-	for (int i = 0; i < num_valid_results; i++)
+	if (find_speed)
 	{
-	    long double value = valid_results[i];
-	    printf("%.19Lf\n", value);
+		for (int i = 0; i < num_valid_results; i++)
+		{
+		    long double value = valid_results[i];
+		    printf("Speed is: %.19Lf\n", value);
+		}
+	}
+	else
+	{
+		for (int i = 0; i < num_valid_results; i++)
+		{
+		    long double value = valid_results[i];
+		    printf("Allure is: %.19Lf\n", value);
+		}
 	}
 }
+
+void err(int err_code)
+{
+	/*
+	switch(err_code)
+	{
+	*/
+}
+
