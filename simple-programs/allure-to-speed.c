@@ -10,6 +10,7 @@
 
 bool ignore_errors = true; /* globals */
 
+void err(int err_code);
 void parse_values(bool find_speed, bool no_convert, bool source_miles, int arg_offset, int number_of_values, char *arguments[]);
 
 int main(int argc, char *argv[])
@@ -103,7 +104,7 @@ int main(int argc, char *argv[])
 				}
 				else if (strcmp(argv[arg_read], "-a") == 0 || strcmp(argv[arg_read], "--allure") == 0)
 				{
-					
+					err(10);
 					allure_to_speed = false;
 					arg_read++;
 					args_before_values++;
@@ -214,9 +215,20 @@ void parse_values(bool find_speed, bool no_convert, bool source_miles, int arg_o
 
 void err(int err_code)
 {
-	/*
+	char error_message[128];
+	bool critical = false; /* all errors are not critical by default */
 	switch(err_code)
 	{
-	*/
+		case 10:
+			snprintf(error_message, sizeof(error_message), 
+					"The -a flag is broken and it might cause errors");
+			critical = false;
+			break;
+		default:
+			snprintf(error_message, sizeof(error_message), 
+					"Unknown error message");
+
+	}
+	printf("\x1b[31m%s\n\x1B[0m", error_message);
 }
 
