@@ -15,4 +15,5 @@ execute the files using the following commands:
 
 delete lines: ``./del``
 
-russian roulette: ``./kill-process``
+russian roulette: ``./kill-process`` 
+Warning! This will kill a random process on your computer no matter the importance of the process
