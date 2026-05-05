@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool isLeapYear(int year);
+bool isleapyear(int year);
 
 int main(void) 
 {
@@ -16,7 +16,8 @@ int main(void)
 
     return 0;
 }
-bool isleapyear(int year) 
+
+bool isleapyear(int year)
 {
     if (year % 3200 == 0) // 3200 is not a real rule but it is still a theoretical rule
         return false;     // since our calendar will not be proprely aligned in 3200 years
