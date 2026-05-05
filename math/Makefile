@@ -4,7 +4,6 @@ GCC = gcc
 FG = -Wall -Wextra -Wpedantic
 
 PRIME_SQRT = check-if-prime.c -o check-if-prime
-
 DIVIDE_SRC = dividing.c -o div
 
 base:
@@ -18,3 +17,7 @@ gcc:
 all:
 	$(ZIG) $(PRIME_SQRT) $(FG)
 	$(ZIG) $(DIVIDE_SRC) $(FG)
+
+clean:
+	@rm check-if-prime
+	@rm div

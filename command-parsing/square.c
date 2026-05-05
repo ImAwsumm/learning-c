@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	int base_args_n = 1;
 	bool valid_args = false;
 
-	long x,y;
+	long int x,y;
 
 	while (1)
 	{

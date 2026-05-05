@@ -16,17 +16,17 @@ int main(int argc, char *argv[])
 
     if (argc > 1)
     {
-	array_size = argc - 1;
-	char *endptr;
-	char *str_1 = argv[1];
-	u_input = strtol(str_1, &endptr, 10);
+		array_size = argc - 1;
+		char *endptr;
+		char *str_1 = argv[1];
+		u_input = strtol(str_1, &endptr, 10);
 
-	if (argc > 2)
-	{
-	    char *endptr_t;
-	    char *str_2 = argv[2];
-	    u_second_val = strtol(str_2, &endptr_t, 10);
-	}
+		if (argc > 2)
+		{
+		    char *endptr_t;
+		    char *str_2 = argv[2];
+		    u_second_val = strtol(str_2, &endptr_t, 10);
+		}
     }
     else
     {
@@ -62,10 +62,10 @@ void get_input(int array_size)
     int i;
     for (i = 1; i <= array_size; i++)
     {
-	long int temp_input;
+		long int temp_input;
     	printf("Type value %d: \n", i);
     	scanf("%ld", &temp_input);
-	int index = i - 1;
-	values[index] = temp_input;
+		int index = i - 1;
+		values[index] = temp_input;
     }
 }
