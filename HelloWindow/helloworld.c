@@ -1,28 +1,31 @@
 #include <gtk/gtk.h>
 
 // Function to update the label's text
-static void on_button_clicked(GtkWidget *button, gpointer data) {
+static void on_button_clicked(GtkWidget *button, gpointer data) 
+{
     GtkLabel *label = GTK_LABEL(data);
-    gtk_label_set_text(label, "Awsum you clicked !"); 
-    // Update the label text when the button is clicked
-    // Even though this is the first line this will be the last update on the window 
+    gtk_label_set_text(label, "Awsum, you clicked !"); 
+    /* Update the label text when the button is clicked
+     * Even though this is the first line this will be the last update on the window */
 }
 
-// Function to close the window when the "destroy" event is triggered
-static void on_window_destroy(GtkWidget *widget, gpointer data) {
+/* Function to close the window when the "destroy" event is triggered */
+static void on_window_destroy(GtkWidget *widget, gpointer data) 
+{
     gtk_main_quit(); // Ends GTK main loop and closes the application
 }
 
-int main(int argc, char *argv[]) {
-
-    // Initialize GTK
+int main(int argc, char *argv[]) 
+{
+    /* Initialize GTK */
     gtk_init(&argc, &argv);
 
     // Create a new window
     GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Hello World - By ImAwsum");
 
-    // Set window resolution or the size (both)
+    /* Set window resolution or the size (both) 
+	 * (1080p) */
     gtk_window_set_default_size(GTK_WINDOW(window), 1920, 1080);
 
     // Create the "Hello, World!" label
