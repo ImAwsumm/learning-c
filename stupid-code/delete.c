@@ -19,7 +19,7 @@ int main(void)
     while (fgets(buffer, sizeof(buffer), src)) 
     {
         if (line > 500)	// delete the first 500 lines
-	{
+		{
             fputs(buffer, temp);
         }
         line++;
