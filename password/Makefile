@@ -1,3 +1,7 @@
+OUT = -o bin
+CMPCMD = gcc password.c -Wall -Werror -Wpedantic -std=c99
 
 base:
-	zig cc password.c -o bin -Wall -Werror -Wpedantic -std=c99
+     $(CMPCMD) $(OUT)
+asm:
+     $(CMPCMD) -S
