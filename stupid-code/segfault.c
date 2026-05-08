@@ -1,5 +1,4 @@
-int main(int argc, char *argv[])
+int main()
 {
-	char very_nice_char = argv[31415][1];
-	return 0;
+    int x = *(int*)0;
 }
